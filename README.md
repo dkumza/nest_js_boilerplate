@@ -16,8 +16,8 @@ To run this project:
 git clone https://github.com/dkumza/nest_js_boilerplate
 cd nest_js_boilerplate
 # edit package.json as you need
-# remove not needed includes from /src dir or code
 yarn # or npm i to install modules
 # open with your favorite IDE
-yarn dev # or npm run dev
+# remove not needed includes from /src dir or code
+yarn dev # or npm run dev to start dev server
 ```
