@@ -50,15 +50,16 @@ export class UsersService {
 
   // https://mongoosejs.com/docs/tutorials/findoneandupdate.html
   async updateUser(id: string, updateUserDto: UpdateUserDto) {
+    const { username, email, password } = updateUserDto;
+    const updateFields = { username, email, password };
+    return await this.usersModel.findByIdAndUpdate(id, updateFields, {
+      new: true,
+    });
+  }
+
+  async updateByAdmin(id: string, updateUserDto: UpdateUserDto) {
     return await this.usersModel.findByIdAndUpdate(id, updateUserDto, {
       new: true,
     });
   }
 }
-
-
-// exclude passwords from the responses
-// getUserById(id: string) {
-//   console.log('id @ getUderById service: ', id);
-//   return this.usersModel.findById(id).select('-password').exec();
-// }
